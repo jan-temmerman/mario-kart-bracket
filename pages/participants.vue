@@ -13,7 +13,7 @@
   onMounted(async () => {
     const client = useSupabaseClient();
     const { data: participants } = await useAsyncData('participants',async () => {
-      const { data } = await client.from('participants').select('*')
+      const { data } = await client.from('participants').select()
       participants.value = data;
     });
   });
